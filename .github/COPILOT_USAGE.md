@@ -52,6 +52,8 @@
 - プロジェクト固有情報の差し込み設計は `.github/blueprints/project-context/` から始める
 - 強い前提を持つ具体例は `.github/optional-packs/` から追加する
 
+導入前後の違いや失敗例を具体的に見たい場合は、`.github/optional-packs/case-studies/` を参照してください。
+
 導入レベルで迷う場合は、`docs/adoption-decision-guide.md` の「最小導入 / 標準導入 / 拡張導入」の判断を先に行うと整理しやすくなります。
 
 機能ごとの詳しい比較と判断基準は、`.github/about/ABOUT_COMPARISON.md` を参照してください。
@@ -59,6 +61,7 @@
 ## 詳細説明
 
 - 比較と判断フロー: `.github/about/ABOUT_COMPARISON.md`
+- Optional Packs の説明: `.github/about/ABOUT_OPTIONAL_PACKS.md`
 - `AGENTS.md` の説明: `.github/about/ABOUT_ROOT_AGENTS.md`
 - `.github/copilot-instructions.md` の説明: `.github/about/ABOUT_COPILOT_INSTRUCTIONS.md`
 - agents の説明: `.github/about/ABOUT_AGENTS.md`

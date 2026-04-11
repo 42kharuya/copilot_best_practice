@@ -28,6 +28,7 @@
 
 - [比較と判断フロー](ABOUT_COMPARISON.md)
 - [Blueprints の説明](ABOUT_BLUEPRINTS.md)
+- [Optional Packs の説明](ABOUT_OPTIONAL_PACKS.md)
 - [ルート AGENTS.md の説明](ABOUT_ROOT_AGENTS.md)
 - [copilot-instructions.md の説明](ABOUT_COPILOT_INSTRUCTIONS.md)
 - [カスタムエージェントの説明](ABOUT_AGENTS.md)
