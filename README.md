@@ -9,9 +9,9 @@
 そこで、**「日本の現場ですぐに使える、GitHub Copilotの最強のテンプレート」**をみんなの力で作りませんか？
 
 このリポジトリには、GitHub Copilotをしゃぶり尽くすための以下の骨組みをすでに用意しています。
-- 💬 **対話ルール (`instructions`)**: パスごとに最適な振る舞いをさせる設定
-- 🤖 **カスタムエージェント (`agents`)**: レビューやテスト生成に特化したAI同僚
-- 🛠️ **スキル (`skills`)**: エージェントに固有のタスクを実行させる拡張機能
+- 💬 **対話ルール**: 全体ルールと局所ルールを分けて管理できる構成
+- 🤖 **カスタムエージェント**: レビューやテスト生成に特化したAI同僚
+- 🛠️ **スキル / ワークフロー**: エージェント実行やクラウド環境構築を支える拡張ポイント
 
 「うちの現場ではこういうプロンプトを使っている」
 「この設定（.instructions.md）を追加したら劇的に精度が上がった」
@@ -63,15 +63,25 @@
 ```text
 .
 ├── .github/
-│   ├── agents/                   # カスタムエージェントの役割とプロンプト定義 (`*.agent.md`)
-│   ├── instructions/             # 特定のパスごとに適用されるカスタムインストラクション (`*.instructions.md`)
-│   ├── skills/                   # エージェントに固有のタスクを実行させるスキルセット (`SKILL.md`)
-│   ├── workflows/                # Copilot Cloud Agent等の環境構築向けCI/CD設定 (`copilot-setup-steps.yml`)
-│   ├── copilot-instructions.md   # リポジトリ全体に適用される基本のAIプロンプト設定
-│   └── COPILOT_USAGE.md          # 導入・運用に向けた各ファイルと機能の使い分けガイド
-├── AGENTS.md                     # プロジェクト開始時にAIエージェントに提示する開発環境・コマンド等の一覧
+│   ├── about/                    # 各機能・各ファイルの詳細説明
+│   ├── agents/                   # 実際に有効化するカスタムエージェント定義
+│   ├── blueprints/               # コピーして使う雛形群 (`*.example`)
+│   ├── instructions/             # 実際に有効化するパス別 instructions
+│   ├── optional-packs/           # 必要な人だけ追加する具体例や拡張
+│   ├── skills/                   # 実際に有効化する skills
+│   ├── workflows/                # 実際に有効化する workflows
+│   ├── copilot-instructions.md   # リポジトリ全体に適用する共通ルール
+│   └── COPILOT_USAGE.md          # 全体像と使い分けの概要ガイド
+├── AGENTS.md                     # どのプロジェクトでも使いやすい共通原則
 └── README.md                     # (このファイル)
 ```
+
+## このテンプレートの使い方
+
+1. まず `AGENTS.md` と `.github/copilot-instructions.md` を **Core** として使う
+2. 必要な雛形を `.github/blueprints/` から選んで、実際の配置先へコピーする
+3. 特定用途の具体例が必要なら `.github/optional-packs/` を追加で使う
+4. 詳しい使い方は `.github/about/` を参照する
 
 ## 📕 参考資料 (References)
 

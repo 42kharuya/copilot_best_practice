@@ -1,17 +1,41 @@
-# 🤖 GitHub Copilot の賢い使い分けガイド
+# 🤖 GitHub Copilot の全体像ガイド
 
-GitHub Copilotを最大限に活用するために、様々な設定ファイルやフォルダをどう使い分ければいいか、「**AIを新入社員に例えて**」わかりやすく解説します！<br>
-まずこれらの機能は一言で言うと「**社員（カスタムAgent）が道具（skills）を使って　規則（copilot-instructions.md, instructions,  AGENTS.md）に沿ってタスクを実行する**」です。
+このファイルは、GitHub Copilot 関連機能の**全体像と使い分けの概要**だけをまとめる場所です。
 
-## 🏢 全体像：それぞれの役割
+各機能の詳細な使い方は `.github/about/` に集約します。
 
-「**普遍原則**」と「**プロジェクト固有情報**」を分けて管理するのがポイントです。
+## 3つのレイヤー
 
-| 種類 | ファイル/フォルダ | 役割（AIにとっての何？） | いつ使うの？ |
-| :--- | :--- | :--- | :--- |
-| **社員** | `.github/agents/` | **特定の仕事のプロフェッショナル**<br>「レビュアー」「パフォーマンステスター」などの役割定義。 | いつものAIではなく、**特定の分野に特化したアドバイス**が欲しいとき（メンション機能で呼び出す）。 |
-| **共通OS<br>(全体)** | `AGENTS.md`<br>*(ルート直下)* | **どのプロジェクトでも変わりにくい普遍原則**<br>安全性、変更方針、検証姿勢、確認が必要なケースなど。 | AIの出力ブレを減らしたいとき。まず最初に整える土台。 |
-| **差し込み情報<br>(局所)** | `各ディレクトリ/AGENTS.md` | **プロジェクト / フォルダ固有の補足情報**<br>その場所だけで必要な構造、前提、ローカルルールなど。 | ルートの普遍原則だけでは足りず、局所的な文脈が必要な場合。 |
-| **対話ルール<br>(就業規則)**| `.github/instructions/`<br>`.github/copilot-instructions.md` | **常に守ってほしい対話・品質ルール**<br>「日本語で話して」「このフォルダではReactを使って」など、チャットやコード生成の振る舞い。 | コードを書かせるときやチャットする際に、**常に背景として**意識してほしい前提ルールがあるとき。 |
-| **道具箱 / 必殺技** | `.github/skills/` | **AIが使える機能（ツール）の拡張**<br>特定のエラー解析や、コードのフォーマット実行など。 | エージェントに「このタスクを自動で手順通りに実行して！」と**具体的な作業を任せたい**とき。 |
-| **デスクの準備** | `.github/workflows/` | **クラウド上の環境構築手順**<br>AIが裏側（クラウド）で自律的に動くための事前準備。 | クラウド・エージェントが、実際にテストを動かしたりビルドできるようにする作業環境を作るとき。 |
+このリポジトリは、Copilot 関連ファイルを次の 3 層で整理します。
+
+| レイヤー | 役割 | 主な配置先 |
+| :--- | :--- | :--- |
+| **Core** | どのプロジェクトでも変わりにくい共通原則 | `AGENTS.md`, `.github/copilot-instructions.md` |
+| **Blueprints** | プロジェクトごとにコピーして差し込む雛形 | `.github/blueprints/` |
+| **Optional Packs** | 必要な人だけ追加導入する具体例や拡張 | `.github/optional-packs/` |
+
+## 機能ごとの見方
+
+| 種類 | 主な配置先 | 役割 |
+| :--- | :--- | :--- |
+| **共通原則** | `AGENTS.md` | 安全性、変更方針、検証姿勢などの土台 |
+| **全体ルール** | `.github/copilot-instructions.md` | リポジトリ全体で守らせたい応答・提案ルール |
+| **局所ルール** | `各ディレクトリ/AGENTS.md`、`.github/instructions/` | 特定領域だけで必要な補足ルール |
+| **カスタムエージェント** | `.github/agents/` | 特定用途に特化した役割定義 |
+| **skills** | `.github/skills/` | エージェントに実行させる具体的手順 |
+| **workflows** | `.github/workflows/` | クラウド側で動く環境構築や実行準備 |
+
+## 使い分けの基本
+
+- まず **Core** をそのまま使う
+- 次に必要な雛形を `.github/blueprints/` からコピーして調整する
+- 強い前提を持つ具体例は `.github/optional-packs/` から追加する
+
+## 詳細説明
+
+- `AGENTS.md` の説明: `.github/about/ABOUT_ROOT_AGENTS.md`
+- `.github/copilot-instructions.md` の説明: `.github/about/ABOUT_COPILOT_INSTRUCTIONS.md`
+- agents の説明: `.github/about/ABOUT_AGENTS.md`
+- instructions の説明: `.github/about/ABOUT_INSTRUCTIONS.md`
+- skills の説明: `.github/about/ABOUT_SKILLS.md`
+- workflows の説明: `.github/about/ABOUT_WORKFLOWS.md`
