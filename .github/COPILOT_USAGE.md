@@ -32,6 +32,8 @@
 - プロジェクト固有情報の差し込み設計は `.github/blueprints/project-context/` から始める
 - 強い前提を持つ具体例は `.github/optional-packs/` から追加する
 
+導入レベルで迷う場合は、`docs/adoption-decision-guide.md` の「最小導入 / 標準導入 / 拡張導入」の判断を先に行うと整理しやすくなります。
+
 ## 詳細説明
 
 - `AGENTS.md` の説明: `.github/about/ABOUT_ROOT_AGENTS.md`

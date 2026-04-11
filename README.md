@@ -55,10 +55,14 @@
 3. 必要な雛形を [.github/blueprints/README.md](.github/blueprints/README.md) から選び、実際の配置先へコピーして調整する
 4. 強い前提を持つ具体例が必要なら [.github/optional-packs/README.md](.github/optional-packs/README.md) を使う
 
+導入レベルを先に判断したい場合は、[導入判断ガイド](docs/adoption-decision-guide.md) を参照してください。
+
 ## 説明の読み分け
 
 - [README.md](README.md)
   - このテンプレートリポジトリ自体の目的、戦略、参加方法
+- [docs/adoption-decision-guide.md](docs/adoption-decision-guide.md)
+  - 最小導入 / 標準導入 / 拡張導入の判断ガイド
 - [.github/COPILOT_USAGE.md](.github/COPILOT_USAGE.md)
   - Copilot 関連機能の全体像と使い分けの概要
 - [.github/about/README.md](.github/about/README.md)
