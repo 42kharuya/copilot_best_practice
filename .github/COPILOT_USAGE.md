@@ -29,6 +29,7 @@
 
 - まず **Core** をそのまま使う
 - 次に必要な雛形を `.github/blueprints/` からコピーして調整する
+- プロジェクト固有情報の差し込み設計は `.github/blueprints/project-context/` から始める
 - 強い前提を持つ具体例は `.github/optional-packs/` から追加する
 
 ## 詳細説明

@@ -26,6 +26,7 @@
 
 ## 現在の説明ドキュメント
 
+- [Blueprints の説明](ABOUT_BLUEPRINTS.md)
 - [ルート AGENTS.md の説明](ABOUT_ROOT_AGENTS.md)
 - [copilot-instructions.md の説明](ABOUT_COPILOT_INSTRUCTIONS.md)
 - [カスタムエージェントの説明](ABOUT_AGENTS.md)

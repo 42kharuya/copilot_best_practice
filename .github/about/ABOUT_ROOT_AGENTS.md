@@ -21,4 +21,5 @@
 
 - 普遍原則は `AGENTS.md`
 - プロジェクト固有の補足は、必要に応じて各ディレクトリの `AGENTS.md`
+- 差し込み設計の雛形は `.github/blueprints/project-context/`
 - `AGENTS.md` 自体の説明は、このドキュメントで扱う
